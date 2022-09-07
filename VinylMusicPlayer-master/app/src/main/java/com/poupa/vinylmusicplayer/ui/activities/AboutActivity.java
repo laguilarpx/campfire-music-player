@@ -19,7 +19,6 @@ import com.afollestad.materialdialogs.internal.ThemeSingleton;
 import com.kabouzeid.appthemehelper.ThemeStore;
 import com.poupa.vinylmusicplayer.R;
 import com.poupa.vinylmusicplayer.databinding.ActivityAboutBinding;
-import com.poupa.vinylmusicplayer.dialogs.ChangelogDialog;
 import com.poupa.vinylmusicplayer.ui.activities.base.AbsBaseActivity;
 import com.poupa.vinylmusicplayer.ui.activities.bugreport.BugReportActivity;
 import com.poupa.vinylmusicplayer.ui.activities.intro.AppIntroActivity;
@@ -31,54 +30,10 @@ import de.psdev.licensesdialog.LicensesDialog;
  */
 public class AboutActivity extends AbsBaseActivity implements View.OnClickListener {
 
-    private static final String GITHUB = "https://github.com/AdrienPoupa/VinylMusicPlayer";
-
-    private static final String WEBSITE = "https://adrien.poupa.fr/";
-
-    private static final String RATE_ON_GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.poupa.vinylmusicplayer";
-
-    private static final String KABOUZEID_GOOGLE_PLUS = "https://google.com/+KarimAbouZeid23697";
-    private static final String KABOUZEID_WEBSITE = "https://kabouzeid.com";
-
-    private static final String AIDAN_FOLLESTAD_GOOGLE_PLUS = "https://google.com/+AidanFollestad";
-    private static final String AIDAN_FOLLESTAD_GITHUB = "https://github.com/afollestad";
-
-    private static final String MICHAEL_COOK_GOOGLE_PLUS = "https://plus.google.com/102718493746376292361";
-    private static final String MICHAEL_COOK_WEBSITE = "https://cookicons.co/";
-
-    private static final String MAARTEN_CORPEL_GOOGLE_PLUS = "https://google.com/+MaartenCorpel";
-
-    private static final String ALEKSANDAR_TESIC_GOOGLE_PLUS = "https://google.com/+aleksandartešić";
-
-    private static final String EUGENE_CHEUNG_GITHUB = "https://github.com/arkon";
-    private static final String EUGENE_CHEUNG_WEBSITE = "https://echeung.me/";
-
-    private static final String ADRIAN_TWITTER = "https://twitter.com/froschgames";
-    private static final String ADRIAN_WEBSITE = "https://froschgames.com/";
-
     Toolbar toolbar;
     TextView appVersion;
-    LinearLayout changelog;
     LinearLayout intro;
     LinearLayout licenses;
-    LinearLayout writeAnEmail;
-    LinearLayout forkOnGitHub;
-    LinearLayout visitWebsite;
-    LinearLayout reportBugs;
-    LinearLayout rateOnGooglePlay;
-
-    AppCompatButton kabouzeidGooglePlus;
-    AppCompatButton kabouzeidWebsite;
-    AppCompatButton aidanFollestadGooglePlus;
-    AppCompatButton aidanFollestadGitHub;
-    AppCompatButton michaelCookGooglePlus;
-    AppCompatButton michaelCookWebsite;
-    AppCompatButton maartenCorpelGooglePlus;
-    AppCompatButton aleksandarTesicGooglePlus;
-    AppCompatButton eugeneCheungGitHub;
-    AppCompatButton eugeneCheungWebsite;
-    AppCompatButton adrianTwitter;
-    AppCompatButton adrianWebsite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,29 +43,8 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
         toolbar = binding.toolbar;
 
         appVersion = binding.content.cardAboutApp.appVersion;
-        changelog = binding.content.cardAboutApp.changelog;
         intro = binding.content.cardAboutApp.intro;
         licenses = binding.content.cardAboutApp.licenses;
-        forkOnGitHub = binding.content.cardAboutApp.forkOnGithub;
-
-        writeAnEmail = binding.content.cardAuthor.writeAnEmail;
-        visitWebsite = binding.content.cardAuthor.visitWebsite;
-
-        reportBugs = binding.content.cardSupportDevelopment.reportBugs;
-        rateOnGooglePlay = binding.content.cardSupportDevelopment.rateOnGooglePlay;
-
-        kabouzeidGooglePlus = binding.content.cardSpecialThanks.kabouzeidGooglePlus;
-        kabouzeidWebsite = binding.content.cardSpecialThanks.kabouzeidWebsite;
-        aidanFollestadGooglePlus = binding.content.cardSpecialThanks.aidanFollestadGooglePlus;
-        aidanFollestadGitHub = binding.content.cardSpecialThanks.aidanFollestadGitHub;
-        michaelCookGooglePlus = binding.content.cardSpecialThanks.michaelCookGooglePlus;
-        michaelCookWebsite = binding.content.cardSpecialThanks.michaelCookWebsite;
-        maartenCorpelGooglePlus = binding.content.cardSpecialThanks.maartenCorpelGooglePlus;
-        aleksandarTesicGooglePlus = binding.content.cardSpecialThanks.aleksandarTesicGooglePlus;
-        eugeneCheungGitHub = binding.content.cardSpecialThanks.eugeneCheungGitHub;
-        eugeneCheungWebsite = binding.content.cardSpecialThanks.eugeneCheungWebsite;
-        adrianTwitter = binding.content.cardSpecialThanks.adrianTwitter;
-        adrianWebsite = binding.content.cardSpecialThanks.adrianWebsite;
 
         setContentView(binding.getRoot());
 
@@ -141,26 +75,8 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
     }
 
     private void setUpOnClickListeners() {
-        changelog.setOnClickListener(this);
         intro.setOnClickListener(this);
         licenses.setOnClickListener(this);
-        forkOnGitHub.setOnClickListener(this);
-        visitWebsite.setOnClickListener(this);
-        reportBugs.setOnClickListener(this);
-        writeAnEmail.setOnClickListener(this);
-        rateOnGooglePlay.setOnClickListener(this);
-        aidanFollestadGooglePlus.setOnClickListener(this);
-        aidanFollestadGitHub.setOnClickListener(this);
-        kabouzeidGooglePlus.setOnClickListener(this);
-        kabouzeidWebsite.setOnClickListener(this);
-        michaelCookGooglePlus.setOnClickListener(this);
-        michaelCookWebsite.setOnClickListener(this);
-        maartenCorpelGooglePlus.setOnClickListener(this);
-        aleksandarTesicGooglePlus.setOnClickListener(this);
-        eugeneCheungGitHub.setOnClickListener(this);
-        eugeneCheungWebsite.setOnClickListener(this);
-        adrianTwitter.setOnClickListener(this);
-        adrianWebsite.setOnClickListener(this);
     }
 
     @Override
@@ -183,50 +99,10 @@ public class AboutActivity extends AbsBaseActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        if (v == changelog) {
-            ChangelogDialog.create().show(getSupportFragmentManager(), "CHANGELOG_DIALOG");
-        } else if (v == licenses) {
+        if (v == licenses) {
             showLicenseDialog();
         } else if (v == intro) {
             startActivity(new Intent(this, AppIntroActivity.class));
-        } else if (v == forkOnGitHub) {
-            openUrl(GITHUB);
-        } else if (v == visitWebsite) {
-            openUrl(WEBSITE);
-        } else if (v == reportBugs) {
-            startActivity(new Intent(this, BugReportActivity.class));
-        } else if (v == writeAnEmail) {
-            Intent intent = new Intent(Intent.ACTION_SENDTO);
-            intent.setData(Uri.parse("mailto:adrien@poupa.fr"));
-            intent.putExtra(Intent.EXTRA_EMAIL, "adrien@poupa.fr");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "Vinyl Music Player");
-            startActivity(Intent.createChooser(intent, "E-Mail"));
-        } else if (v == rateOnGooglePlay) {
-            openUrl(RATE_ON_GOOGLE_PLAY);
-        } else if (v == aidanFollestadGooglePlus) {
-            openUrl(AIDAN_FOLLESTAD_GOOGLE_PLUS);
-        } else if (v == aidanFollestadGitHub) {
-            openUrl(AIDAN_FOLLESTAD_GITHUB);
-        } else if (v == kabouzeidGooglePlus) {
-            openUrl(KABOUZEID_GOOGLE_PLUS);
-        } else if (v == kabouzeidWebsite) {
-            openUrl(KABOUZEID_WEBSITE);
-        } else if (v == michaelCookGooglePlus) {
-            openUrl(MICHAEL_COOK_GOOGLE_PLUS);
-        } else if (v == michaelCookWebsite) {
-            openUrl(MICHAEL_COOK_WEBSITE);
-        } else if (v == maartenCorpelGooglePlus) {
-            openUrl(MAARTEN_CORPEL_GOOGLE_PLUS);
-        } else if (v == aleksandarTesicGooglePlus) {
-            openUrl(ALEKSANDAR_TESIC_GOOGLE_PLUS);
-        } else if (v == eugeneCheungGitHub) {
-            openUrl(EUGENE_CHEUNG_GITHUB);
-        } else if (v == eugeneCheungWebsite) {
-            openUrl(EUGENE_CHEUNG_WEBSITE);
-        } else if (v == adrianTwitter) {
-            openUrl(ADRIAN_TWITTER);
-        } else if (v == adrianWebsite) {
-            openUrl(ADRIAN_WEBSITE);
         }
     }
 
