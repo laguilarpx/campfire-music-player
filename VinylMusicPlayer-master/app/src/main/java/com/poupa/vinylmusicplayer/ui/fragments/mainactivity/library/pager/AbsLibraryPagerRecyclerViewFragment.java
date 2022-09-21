@@ -1,6 +1,7 @@
 package com.poupa.vinylmusicplayer.ui.fragments.mainactivity.library.pager;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,6 +110,7 @@ public abstract class AbsLibraryPagerRecyclerViewFragment<A extends RecyclerView
     private void checkIsEmpty() {
         if (empty != null) {
             empty.setText(getEmptyMessage());
+            empty.setGravity(Gravity.CENTER_VERTICAL);
             empty.setVisibility(adapter == null || adapter.getItemCount() == 0 ? View.VISIBLE : View.GONE);
         }
     }
