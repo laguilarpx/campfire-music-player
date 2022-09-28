@@ -169,7 +169,7 @@
     <string name="playlist_empty_text">Empty playlist</string>
     <string name="no_playlists">No playlists</string>
     <string name="no_albums">No albums</string>
-    <string name="no_songs">Instructions to sync music in the player: \n\n 1. In the upper left corner, tap menu icon \n\n 2. Tap Rescan library \n\n 3. A pop up message will be desplayed, tap Rescan Library \n\n 4. After a few seconds, the library will have all the songs available on device </string>
+    <string name="no_songs">1. In the upper left corner, tap the menu icon. \n\n 2. Then tap Rescan library. \n\n 3. A pop-up message will be displayed, tap Rescan Library. \n\n 4. After a few seconds, the library will show all of the music files available on device. </string>
     <string name="no_artists">No artists</string>
     <string name="no_genres">No genres</string>
     <string name="empty">Empty</string>
