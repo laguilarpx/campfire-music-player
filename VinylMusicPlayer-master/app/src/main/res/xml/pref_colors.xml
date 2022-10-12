@@ -15,7 +15,7 @@
 
         <com.kabouzeid.appthemehelper.common.prefs.supportv7.ATEListPreference
             app:iconSpaceReserved="false"
-            android:defaultValue="classic"
+            android:defaultValue="rounded"
             android:entries="@array/pref_theme_style_list_titles"
             android:entryValues="@array/pref_theme_style_list_values"
             android:key="theme_style"
