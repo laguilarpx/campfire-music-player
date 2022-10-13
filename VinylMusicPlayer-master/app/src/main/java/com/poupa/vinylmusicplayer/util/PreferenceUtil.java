@@ -692,19 +692,19 @@ public final class PreferenceUtil {
     }
 
     public final int getThemeStyle() {
-        return getThemeStyleFromPrefValue(mPreferences.getString(THEME_STYLE, "classic"));
+        return getThemeStyleFromPrefValue(mPreferences.getString(THEME_STYLE, "rounded"));
     }
 
     public static int getThemeStyleFromPrefValue(String themeStylePrefValue) {
         int theme;
 
         switch (themeStylePrefValue) {
-            case "rounded":
-                theme = ROUNDED_THEME;
-                break;
             case "classic":
-            default:
                 theme = CLASSIC_THEME;
+                break;
+            case "rounded":
+            default:
+                theme = ROUNDED_THEME;
                 break;
         }
 
