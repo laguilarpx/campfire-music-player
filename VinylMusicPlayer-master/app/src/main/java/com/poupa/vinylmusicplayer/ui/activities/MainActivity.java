@@ -51,6 +51,9 @@ import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import java.util.ArrayList;
 
+import com.dropbox.core.DbxRequestConfig;
+import com.dropbox.core.v2.DbxClientV2;
+
 public class MainActivity extends AbsSlidingMusicPanelActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
@@ -58,6 +61,9 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
 
     private static final int LIBRARY = 0;
     private static final int FOLDERS = 1;
+
+    private static final String ACCESS_TOKEN = "sl.BtaV6lHI6XKo6fMx3RSfKCuVgm0I0VUxJJFgsl7_Bp8xopbTEtZAG8zE5_PnOLsa2lDrbBT7ONBqmFrTUnkWPhhXsq0Xx-f5bhW1nY0zIiKeG2HSB7_-twCW_4rPkDIJ954-ybfp1jm1";
+    private static DbxClientV2 dbxClient;
 
     NavigationView navigationView;
     DrawerLayout drawerLayout;
@@ -74,6 +80,7 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initializeDropbox();
         setDrawUnderStatusbar();
 
         if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {
@@ -382,5 +389,15 @@ public class MainActivity extends AbsSlidingMusicPanelActivity {
 
     public interface MainActivityFragmentCallbacks {
         boolean handleBackPress();
+    }
+
+    private void initializeDropbox() {
+        DbxRequestConfig config = DbxRequestConfig.newBuilder("Campfire Music Player").build();
+        dbxClient = new DbxClientV2(config, ACCESS_TOKEN);
+        Log.d("DropboxIntegration", "Initializing Dropbox API");
+    }
+
+    public static DbxClientV2 getDbxClient() {
+        return dbxClient;
     }
 }
